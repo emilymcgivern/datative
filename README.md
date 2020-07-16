@@ -1,1 +1,3 @@
-# datative
+# Datative
+
+Datative is a web-based analytics application. This application is a rich, powerful analytics tool which allows users to create interactive, personalised dashboards which can be exported as a PDF report. It provides the user numerous ways to intuitively visualise and represent their data. This application is designed to allow users to gain insights into their data without the need for a deep understanding of data analytics. A selection of components along with their underlying algorithms offer a way for anyone with data from any field to gain insights and deeper understanding of what their data represents. The application is easy to use and facilitates the quick design of creative dashboards which can then be exported as a PDF report to harness the power of the analytics outside of the application. 
