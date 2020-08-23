@@ -1,0 +1,7 @@
+id,first_name,last_name,email,gender,age,grade,university,module_code,exam_date,average,result,preference,admission_date,dob,internship,failed_module,favourite_module,top_class
+1,,Venton,aventon0@goo.gl,Male,20,76,DCU,UA,01/10/2019,78.2,a,b,03/23/2018,11/11/1995,None,None,CA400,CA4007
+2,Shayna,,,Female,23,63,DCU,UA,16/07/2019,,95.7,1,03/23/2018,11/11/1995,None,None,CA400,CA4007
+3,Virgie,Asple,,,19,1,UCD,FI,17/11/2019,68.2,86.2,3,03/23/2018,11/11/1995,None,None,15/6/2020,2.6
+4,Kate,Ryan,,Female,23,75,DCU,UA,,73.4,44.3,2,03/23/2018,11/11/1995,None,MS121,CA4007,CA4003
+5,Shane,Dunne,,Female,33,63,DCU,UA,16/07/2019,77.8,32.9,a,03/23/2018,11/11/1995,None,CA400,CA4003,CA400
+6,John,Dorie,,Male,19,1,DCU,FI,17/11/2019,64.2,19.7,5,03/23/2018,11/11/1995,None,CA226,CA400,CA4012

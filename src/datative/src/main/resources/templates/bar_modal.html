@@ -1,0 +1,83 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div id="bar_modal">
+	<div class="modal-header">
+    	<h5 class="modal-title w-100 text-center">Add Bar Chart</h5>
+        <button type="button" class="close" data-dismiss="modal" data-target="#settingsModal">&times;</button>
+	</div>
+
+	<div class="modal-body">
+		<!-- Form for choosing options for KPI tile  -->
+		<form role="form" id="barchartForm" name="modalForm" method="post" action="/bar">
+
+
+			<div class="form-group">
+				<div id="choose-bar-title">
+					<div id="barTitleHeader">
+						<h6>Enter Tile Title</h6>
+					</div>
+					<p class="text-secondary"><small>Enter a title for your Bar Chart (optional)</small></p>
+					<div class="input-group mb-3">
+	  					<div class="input-group-prepend">
+	    					<span class="input-group-text" id="bar-title">Title</span>
+	  					</div>
+	  					<input type="text" class="form-control" value="" name="barTitle" id="barTitle" placeholder="Enter title" aria-label="Target" maxlength="19">
+					</div>
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<div id="choose-columns-bar">
+					<div id="columnHeader">
+						<h6>Choose Columns</h6>
+					</div>
+					<p class="text-secondary"><small>Choose a column to be added to the Bar Chart</small></p>
+					<div th:each="column : ${columnNames}">
+						<div th:each="c: ${column}" th:if="${c.value == 'IntegerType' or c.value == 'DoubleType'}">
+							<ul style="list-style-type:none;">
+								<li>
+									<input type="radio" name="columnName" th:value="${c.key}" required>
+									<label th:text="${c.key}"></label>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			 </div>
+
+
+			<div class="form-group">
+				<!-- List for choosing dimension column value to display for trend tile -->
+				<div id="choose-dimension-comp-bar">
+					<div id="dimensionHeader">
+						<h6>Choose Dimension</h6>
+					</div>
+					<p class="text-secondary"><small>Choose a column to sort by</small></p>
+					<div th:each="column : ${columnNames}">
+						<div th:each="c: ${column}" th:if="${c.value == 'StringType' or c.value == 'DateType'}">
+							<ul style="list-style-type:none;">
+								<li>
+									<input type="radio" name="columnNameDimensionCompBar" th:value="${c.key}" required>
+									<label th:text="${c.key}"></label>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		 
+			
+			<div class="button-box">
+				<input class="btn btn-primary" type="submit" value="Submit">
+  				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+			</div>
+		 </form>
+		
+	 </div>
+	
+ 	<div class="modal-footer"></div> 
+ 	
+</div>
+

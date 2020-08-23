@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta th:name="${_csrf.parameterName}" th:content="${_csrf.token}"/> <!-- Including CSRF tokens on the page  -->
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="css/dashboard.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/gridstack@1.1.1/dist/gridstack.all.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.23.0/pivot.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.23.0/pivot.min.js"></script>
+  
+  <!-- Bootstrap 4 dependency -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+  
+  <!-- Colour Picker Dependencies  -->
+  <script src="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.css">
+  
+  <script src="https://kit.fontawesome.com/0b20b20bb4.js" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="bar.js"></script>
+  <script type="text/javascript" src="pie.js"></script>
+  <script type="text/javascript" src="kpiNum.js"></script>
+  <script type="text/javascript" src="kpiTrend.js"></script>
+  <script type="text/javascript" src="kpiTarget.js"></script>
+  <script type="text/javascript" src="kpiForm.js"></script>
+  <script type="text/javascript" src="exportPDF.js"></script>
+  <script type="text/javascript" src="crosstabForm.js"></script>
+  <script type="text/javascript" src="crosstab.js"></script>
+  <script type="text/javascript" src="customisation.js"></script>
+  <script type="text/javascript" src="barchart_form.js"></script>
+  <script type="text/javascript" src="piechart_form.js"></script>
+  
+  <title>DashBoard</title>
+
+</head>
+
+<body>  	
+	
+	<nav class="navbar navbar-expand-lg navbar-light bg-white">
+		<div class="header-icon">
+			<img class="icon-image" src="images/logo.png" alt="Datative Logo">
+		</div>
+  		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    		<div class="navbar-nav">
+      			<h2 id="dashboardName" contenteditable=true>Dashboard</h2> 
+    		</div>
+  		</div>
+  		<a class="btn btn-outline-success return-button" href="/profile">Return to Profile</a>
+		<a class="btn btn-outline-primary export-button" href="javascript:createPDF()">Export Report</a>
+	</nav>
+  	
+  	<div class="row">
+    	<div class="col-md-2" id="components-bar">
+    	
+    	<div class="list-group list-group-flush">
+    		<div class="list-group-item" id="table-name" th:text="'Dataset: ' + ${tableName.replaceFirst(currUser.id, '')}"></div>
+    		<div class="component-bar-header">Components</div>
+  			<a href="#bar" class="list-group-item" data-toggle="modal">Bar Chart</a>
+  			<a href="#pie" class="list-group-item" data-toggle="modal">Pie Chart</a>
+  			<a href="#kpi" class="list-group-item" data-toggle="modal">KPI Tile</a>
+  			<a href="#crosstab" class="list-group-item" data-toggle="modal">Crosstab</a>
+  			<a href="#" id="add-new-text-box" class="list-group-item" data-toggle="modal">Text Box</a>
+		</div>
+    	
+   		<div id="bar" class="modal fade">
+   			<div class="modal-dialog">
+       			<div class="modal-content" th:include="bar_modal.html :: #bar_modal"></div> 
+   			</div> 
+		</div>
+		
+		<div id="pie" class="modal fade">
+			<div class="modal-dialog">
+   				<div class="modal-content" th:include="pie_modal.html :: #pie_modal"></div>
+			</div> 
+		</div>
+		
+   		<div id="kpi" class="modal fade">
+			<div class="modal-dialog">
+   				<div class="modal-content" th:include="kpi_modal.html :: #kpi_modal"></div>
+			</div> 
+		</div>
+			
+		<div id="crosstab" class="modal fade">
+			<div class="modal-dialog">
+   				<div class="modal-content" th:include="crosstab_modal.html :: #crosstab_modal"></div>
+			</div> 
+		</div>
+
+  </div>
+  
+  	<div id="dialog">
+  		<p>Not enough free space on the dashboard to place the widget</p>
+    </div>
+    
+    <div class="col-md-8">
+      <div class="grid-stack" data-gs-animate="yes"></div>
+    </div>
+    
+	
+	<div class="col-md-2">
+		<div class="affix">
+	        <div class="sidebar">
+	  			<h5 id="sidebar-header">Style</h5>
+	  			<hr/>
+	  			
+	  			<div class="sidebar-group">
+		  			<div id="font-header">Font</div>
+		  			<select class="form-control" id="fontFamily">
+	    				<option value="Arial">Arial</option>
+	    				<option value="Times New Roman">Times New Roman</option>
+	    				<option value="Georgia">Georgia</option>
+	    				<option value="Trebuchet MS">Trebuchet MS</option>
+	    				<option value="Verdana">Verdana</option>
+	    				<option value="Courier New">Courier New</option>
+	    			</select>
+    			</div>
+    			
+    			<div class="sidebar-group">
+	    			<div class="textButtons">
+	    				<button id="bold" class="textButton btn btn-outline-dark" onclick="boldText()"><i class="fa fa-bold"></i></button>
+		  				<button id="italic" class="textButton btn btn-outline-dark" onclick="italicText()"><i class="fa fa-italic"></i></button>
+		  				<button id="underline" class="textButton btn btn-outline-dark" onclick="underlineText()"><i class="fa fa-underline"></i></button>
+	    			</div>
+    			</div>
+    			
+    			<hr/>
+    			
+    			<div class="sidebar-group">
+	    			<div id="font-colour-options">
+		    			<div id="font-colour">Font Colour</div>
+			  			<input id="color-picker-header" value='#010101'/>
+		  			</div>
+	  			</div>
+    			
+    			<div class="sidebar-group">
+	    			<div id="font-background-options">
+	    				<div id="background-colour">Background Colour</div>
+	    				<input id="color-picker-background" value='#010101'/>   
+	    			</div>	
+    			</div>
+    			
+    			<hr/>
+    			
+    			<div class="sidebar-group sidebar-buttons">
+    				<button type="button" class="btn btn-danger sidebar-button" id="delete-component">Delete Component</button>
+    				<button type="button" class="btn btn-primary sidebar-button" id="clear-style">Clear Chosen Style</button>
+    			</div>
+    					
+			</div>
+		</div>
+    </div>
+
+</div> 
+
+
+ <script th:inline="javascript">
+ 	/* Initialise the gridstack dashboard area  */
+	var grid = GridStack.init({
+		alwaysShowResizeHandle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+			navigator.userAgent
+    	),
+    	disableOneColumnMode: true,
+    	maxRow:14,
+    	float: true, 
+    	/* Enable resize handles on edges  */
+    	resizable: {
+      		handles: 'e, se, s, sw, w'
+    	},
+    	removeTimeout: 100,
+    	acceptWidgets: '.newWidget'
+  	}); 
+ 	
+ 	/* Setting default cell height to 0.6 of min height to handle text box widgets */
+	grid.cellHeight(grid.cellHeight() * 0.6, noUpdate = false);
+ 	
+ 	/* Add new text box widget when user clicks button */
+ 	addNewTextBox = function() {
+ 		var node = {width: 4, height: 1, autoPosition: true};
+ 		var textId = Math.random();
+ 		if (grid.willItFit(null, null, 4, 1, true)) {
+ 			grid.addWidget('<div id=textbox' + textId + '><div class="grid-stack-item-content"><textarea class="widgetTitle" style="overflow:hidden" oninput="fit_content(this)"></textarea></div></div>', node); 	
+ 		}
+ 		
+ 		else {
+ 			$("#dialog").dialog("open");
+ 		}
+ 	}
+ 	
+ 	function fit_content(element) {
+ 	    element.style.height = "5px";
+ 	    element.style.height = (element.scrollHeight)+ "px";
+ 	}
+ 	
+ 	$(function() { //Alerts that there is no space left on the dashboard
+		  $("#dialog").dialog({ //Initialize the pop-up dialog 
+			  dialogClass: "no-close",
+			  autoOpen : false, 
+			  modal : true,
+			  buttons: [
+			    {
+			      text: "OK",
+			      click: function() {
+			        $( this ).dialog( "close" );
+			      }
+			    }
+		  ]});
+ 	 });
+ 
+ 	
+ 	$("#dashboardName").keypress(function(event){ 
+ 		return event.which != 13; //Adding handler for newline event to prevent user adding new line to dashboard name
+ 	});
+ 	
+ 	$('#color-picker-header').spectrum({ //Adding colour picker for picking widget header text colour
+ 		  type: "color",
+ 		  showInput: "true",
+ 		  showInitial: "true",
+ 		  showAlpha: "false",
+    	  change: function(colour) {
+    		  	var hexColour = colour.toHexString(); 
+    		  	headerColour(hexColour);
+    	  }
+ 	});
+ 	
+ 	$('#color-picker-background').spectrum({ //Adding colour picker for picking widget background colour
+		  type: "color",
+		  showInput: "true",
+		  showInitial: "true",
+		  showAlpha: "false",
+  	      change: function(colour) {
+  		  	   var hexColour = colour.toHexString(); 
+  		  	   widgetBackgroundColour(hexColour);
+  	  	  }
+	});
+ 	
+ 	var prevId = ""; //Setting variable to store previously clicked widget id
+ 	var prevDiv = "";
+ 	
+ 	$(".grid-stack").on('click', ".grid-stack-item", function(e) { //Selecting widgets in grid
+ 		storeStyleState(prevDiv); //Storing state of div for previous widget
+ 		prevId = $(this)[0].id || "";
+ 		prevDiv = $(this);
+ 		populateDiv(prevId);
+ 		$('.grid-stack .grid-stack-item-content').removeClass('highlight'); //Removing existing highlight
+		$(this).find('.grid-stack-item-content').toggleClass('highlight'); //adding highlight class to highlight selected element
+	    $('.sidebar').show("slide", { direction: "right" }, 400);
+		event.stopPropagation();
+		getCurrentSelection($(this));
+		return false; //returning false to ensure parent class isn't affected
+ 	});
+
+ 	$('#delete-component').on('click', function() {
+ 		grid.removeWidget(prevDiv); //Removing currently selected div on click of delete button
+ 		$('.sidebar').hide("slide", { direction: "right" }, 400);
+ 	});
+ 	
+ 	$('#clear-style').on('click', function() {
+ 		resetStyleOptions(); //Resets all style option inputs
+ 		prevDiv.find('.widgetTitle').css('color', '#2C3E50');
+ 		prevDiv.find('.widgetTitle').removeClass('bold');
+ 		prevDiv.find('.widgetTitle').removeClass('italic');
+ 		prevDiv.find('.widgetTitle').removeClass('underline');
+ 		prevDiv.find('.widgetTitle').css('font-family', 'Arial');
+ 		prevDiv.find('.grid-stack-item-content .text-area-bg').css('background-color', '#FFFFFF');
+ 		prevDiv.find('.grid-stack-item-content').css('background-color', '#FFFFFF');
+ 	});
+ 		
+ 	$(document).on("click", function(event) {
+ 	    // Check if click was triggered on or within #menu_content
+ 	    if($(event.target).closest('.sidebar').length > 0 ) { //Checking if click occcured in sidebar area and aborting the operation if it did
+ 	        return false;
+ 	    }
+ 		$('.grid-stack .grid-stack-item-content').removeClass('highlight'); //Removing highlight from widget if any area outside of a widget is clicked
+ 		$('.sidebar').hide("slide", { direction: "right" }, 400); //Sidebar slides back in when any other dashboard area clicked
+ 	});
+ 	
+ 	$('.textButton').click(function() { //Toggle class to highlight button when it is clicked and removing highlight when clicked again
+ 	    $(this).toggleClass('clicked');
+ 	});
+ 	
+    $("#fontFamily").change(function(){
+    	fontFamily($(this).val())
+    });   
+    
+    /* Add new text box widget when user clicks button */
+    $('#add-new-text-box').click(function() {
+	  		var node = {width: 4, height: 1, autoPosition: true};
+	  	 	var textId = Math.random();
+	  	 	if (grid.willItFit(null, null, 4, 1, true)) {
+	  	 		grid.addWidget('<div id=textbox' + textId + '><div class="grid-stack-item-content"><textarea class="widgetTitle" style="overflow:hidden" oninput="fit_content(this)"></textarea></div></div>', node); 	
+	  	 	}		
+	  	 	else {
+	  	 		$("#dialog").dialog("open");
+	  	 	}
+  	 	}
+    );
+    
+    function resetDivs() {
+    	$('#choose-column').hide();
+	    $('#choose-column-trend-date').hide();
+	    $('#kpi-op').hide();
+	    $('#choose-target').hide();
+	    $('#choose-name').hide();
+	    document.getElementById("kpiForm").reset();
+    }
+    
+
+    function resetCrosstabDivs() {
+    	//Hiding divs after form has been submitted so it is reset to original view
+    	$('#choose-column-crosstab').hide();
+    	$('#choose-row-crosstab').hide();
+    	$('#choose-agg-crosstab').hide();
+    	document.getElementById('crosstabForm').reset(); 
+    };
+
+    
+    $("#kpiForm").submit(function(event) {
+   		$('#kpi').modal('hide');
+   		sendKpiForm(event);
+    });
+    
+    $("#crosstabForm").submit(function(event) {
+		$('#crosstab').modal('hide');
+		sendCrosstabForm(event);
+	});	
+    
+    $("#barchartForm").submit(function(event) {
+		$('#bar').modal('hide');
+		sendBarchartForms(event);
+	});
+    
+    $("#piechartForm").submit(function(event) {
+		$('#pie').modal('hide');
+		sendPiechartForm(event);
+	});
+    
+    $('#crosstabOpName').change(function() {
+    	opt = $(this).val()
+    	if (opt === "count") {
+    		$('#choose-column-crosstab').show().find('select').attr('required', true);
+    		$('#choose-row-crosstab').show().find('select').attr('required', true);
+    		$('#choose-agg-crosstab').hide().find('select').attr('required', false);
+    	}
+    	else if (opt === "sum") {
+    		$('#choose-column-crosstab').show().find('select').attr('required', true);
+    		$('#choose-row-crosstab').show().find('select').attr('required', true);
+    		$('#choose-agg-crosstab').show().find('select').attr('required', true);
+    	}
+    });
+    
+    /* Showing divs depending on choice made by user as to what kpi tile to use */
+    $('#kpiType').change(function() {
+    	opt = $(this).val();
+        if (opt == "num") {
+        	$('#choose-column-trend-date').hide().find(':input').attr('required', false);
+            $('#choose-column').show().find(':input').attr('required', true);
+            $('#choose-name').show();
+            $('#kpi-op').show().find('select').attr('required', true);
+            $('#choose-target').show();	
+        }
+        
+        else if (opt == "trend") {
+        	$('#choose-column-trend-date').show().find(':input').attr('required', true);
+        	$('#choose-column').show().find(':input').attr('required', true);
+        	$('#choose-name').show();
+            $('#kpi-op').hide().find('select').attr('required', false);
+            $('#choose-target').hide().find(':input').attr('required', false);
+        }
+        
+		else if (opt == "target") {
+ 			$('#choose-column').show().find(':input').attr('required', true);
+ 			$('#choose-target').show();
+ 			$('#choose-name').show();
+ 			$('#kpi-op').show().find('select').attr('required', true);
+ 			$('#choose-column-trend-date').hide().find(':input').attr('required', false);
+        }
+        
+        else {
+        	$('#choose-column').hide().find(':input').attr('required', false);
+    	    $('#choose-column-trend-date').hide().find(':input').attr('required', false);
+    	    $('#kpi-op').hide().find('select').attr('required', false);
+    	    $('#choose-target').hide();
+    	    $('#choose-name').hide();
+        }
+     
+    });
+    
+  
+    
+  </script> 
+  
+</body>
+
+</html>

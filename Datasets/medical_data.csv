@@ -1,0 +1,101 @@
+country,city,date,suspected_cases,confirmed_cases,suspected_deaths,confirmed_deaths,gender
+Ireland,Stradbally,30/06/2019,4380,2597,2307,4622,
+United Kingdom,Ashley,16/03/2019,4484,1397,4582,3880,Female
+Ireland,Ballyboden,26/10/2019,2537,582,1381,523,Female
+Ireland,Kinsealy-Drinan,13/02/2019,3598,1007,955,1535,Male
+Ireland,Moycullen,15/11/2019,2994,140,883,453,Male
+Ireland,Kinsale,13/05/2019,2167,2942,504,1146,
+Ireland,Sandyford,07/12/2019,1168,274,4584,1648,Male
+Ireland,Bundoran,13/04/2019,1168,2176,85,3874,Female
+Ireland,Cashel,07/12/2019,1101,1293,929,4103,Male
+United Kingdom,Stapleford,14/11/2019,3226,4100,4214,3348,Male
+Ireland,Sandymount,11/01/2019,1977,2268,4308,4269,Female
+United Kingdom,Norton,02/10/2019,3985,2899,1248,3320,Female
+Ireland,Farranacoush,24/02/2019,2476,1647,3251,391,Female
+Ireland,Newmarket on Fergus,12/12/2019,1263,1077,886,3584,Female
+Ireland,Skibbereen,10/03/2019,2816,4384,1624,841,Male
+Ireland,Caherconlish,07/09/2019,1901,3512,4401,445,Male
+United Kingdom,Denton,24/11/2019,59,3197,2536,16,
+United Kingdom,Middleton,22/05/2019,3997,2613,190,2461,
+Ireland,Ballisodare,17/10/2019,282,547,1253,4234,Male
+United Kingdom,Carlton,09/11/2019,529,4109,2148,1787,Female
+Ireland,Valleymount,05/11/2019,1231,3321,1850,4859,Female
+Ireland,Ballybofey,29/03/2019,2524,4181,2493,3852,Female
+United Kingdom,London,31/08/2019,2796,3795,4896,3544,Female
+Ireland,Shankill,27/01/2019,2464,2899,3873,4729,
+Ireland,Ballina,28/08/2019,2455,3344,307,4799,Male
+Ireland,Kilmacanoge,11/10/2019,3159,411,2270,3770,
+Ireland,Mullagh,20/02/2019,1050,3542,3690,1602,Female
+United Kingdom,Brampton,12/02/2019,987,3433,1787,1292,
+Ireland,Bagenalstown,07/12/2019,4404,3677,557,357,Female
+Ireland,Beaumont,18/05/2019,2749,1761,1898,1968,Female
+Ireland,Stradbally,28/04/2019,4246,2760,2774,4736,Male
+United Kingdom,Norton,20/12/2019,2545,2632,1187,4643,Female
+Ireland,Bayside,18/08/2019,1472,3039,2480,2497,Male
+United Kingdom,Sheffield,21/06/2019,1573,1238,1267,1645,Female
+United Kingdom,Leeds,18/02/2019,696,3056,3788,1508,Female
+United Kingdom,Burnside,09/12/2019,4695,717,555,4174,Male
+Ireland,Greenhills,02/04/2019,3661,3828,2573,3830,Female
+Ireland,Crossmolina,21/10/2019,1587,2791,3368,4270,Male
+Ireland,Adare,18/04/2019,1537,535,3333,2139,Male
+Ireland,Longwood,18/06/2019,4280,3515,3350,371,Female
+Ireland,Bearna,08/03/2019,3696,1397,1450,2172,Male
+Ireland,Piltown,09/01/2019,140,982,750,50,Male
+United Kingdom,Sheffield,15/03/2019,1636,2032,1774,3923,Male
+Ireland,Valleymount,29/03/2019,567,4077,1983,851,Male
+United Kingdom,Wootton,28/10/2019,451,3311,3876,1173,Female
+United Kingdom,Tullich,30/04/2019,3435,1338,4574,412,Female
+Ireland,Confey,07/06/2019,1898,3247,1776,235,Female
+Ireland,Monaghan,01/06/2019,4279,202,753,4522,Male
+Ireland,Ashford,16/11/2019,174,2534,4986,2160,Male
+Ireland,Swinford,18/08/2019,3419,1171,857,4346,Male
+Ireland,Kinsealy-Drinan,13/06/2019,3613,437,2932,1977,Male
+Ireland,Ferbane,01/02/2019,1453,3700,2996,2034,Male
+Ireland,Rathangan,11/03/2019,2379,926,4910,752,Female
+Ireland,Greystones,12/04/2019,2792,4346,337,480,Female
+Ireland,Stradbally,05/09/2019,2029,1814,3466,3549,Female
+Ireland,Dromiskin,28/06/2019,4411,1940,4449,1794,Female
+Ireland,Coolock,04/11/2019,1185,1889,1505,400,Female
+Ireland,Cluain Meala,12/05/2019,3987,2157,4365,2467,Male
+Ireland,Ardee,25/08/2019,1738,2828,1826,993,Male
+Ireland,Oranmore,15/09/2019,3584,3172,4467,1429,Female
+Ireland,Bantry,02/02/2019,3125,2611,4821,1857,Male
+Ireland,Ballymahon,23/01/2019,3425,2489,1970,1972,Male
+United Kingdom,London,04/06/2019,1934,1282,4396,1771,Female
+Ireland,Templeogue,22/02/2019,4054,4294,844,2058,Female
+Ireland,Charlesland,07/07/2019,384,1039,22,500,Female
+United Kingdom,Stapleford,14/12/2019,1409,3804,1407,4177,Female
+United Kingdom,Ford,10/01/2019,3583,4183,1792,3205,Male
+Ireland,Dunmanway,26/09/2019,3591,4720,1042,4810,Female
+United Kingdom,Pentre,01/09/2019,2595,3608,4963,293,Female
+Ireland,Rathangan,29/11/2019,264,2415,3629,1687,Male
+Ireland,Enniskerry,22/08/2019,3275,4968,3107,4895,Female
+Ireland,Whitegate,16/12/2019,329,4772,119,1840,Female
+Ireland,Raphoe,28/01/2019,1232,4210,433,361,Male
+Ireland,Sandymount,10/03/2019,1410,2535,3361,620,Female
+United Kingdom,Church End,11/05/2019,2187,4745,84,4107,Female
+Ireland,Longford,11/11/2019,4984,3079,4722,4911,Male
+Ireland,Booterstown,14/09/2019,1016,4427,525,2635,Female
+United Kingdom,Upton,05/11/2019,4288,4559,4594,1166,Male
+Ireland,Castlepollard,27/05/2019,789,1015,1213,3770,Female
+Ireland,Trá Mhór,12/06/2019,3813,4796,4516,3761,Male
+United Kingdom,Kinloch,03/10/2019,1812,3835,530,2610,Female
+United Kingdom,Sutton,19/01/2019,1524,880,3493,904,Female
+Ireland,Dún Laoghaire,02/02/2019,2120,1810,2398,1394,Male
+United Kingdom,Middleton,18/06/2019,681,1670,4996,4276,Female
+Ireland,Sutton,06/07/2019,2199,4846,1621,771,Male
+Ireland,Dromiskin,10/12/2019,4975,19,2093,1973,Male
+United Kingdom,Milton,25/10/2019,1768,44,3045,4491,Female
+United Kingdom,Marston,02/04/2019,121,4187,2733,3529,Male
+United Kingdom,Upton,17/06/2019,380,176,4691,2782,Female
+Ireland,Killorglin,13/08/2019,1659,4518,2426,3031,Male
+Ireland,Ashbourne,08/04/2019,3062,4905,3402,2702,Male
+United Kingdom,Bradford,13/12/2019,1912,2901,3472,1109,Male
+Ireland,Cluain Meala,26/07/2019,525,4458,3354,4089,Female
+Ireland,Balally,25/11/2019,3106,2044,2164,3082,Female
+United Kingdom,Sutton,14/03/2019,379,1434,2765,2201,Female
+Ireland,Virginia,29/01/2019,1212,1754,2526,2187,
+Ireland,Kill,05/09/2019,1270,2074,4162,4310,Male
+Ireland,Edgeworthstown,05/12/2019,2145,4467,3276,1586,Female
+United Kingdom,London,01/05/2019,3261,4501,28,3879,
+Ireland,Aghada,27/12/2019,3995,1432,840,873,Female

@@ -1,0 +1,123 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.login-container {
+  width: 100%;  
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px; 
+}
+
+.login-wrap {
+  width: 390px;
+  height: 550px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 75px 55px 55px 55px;
+
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+  display: block;
+  font-family: Arial;
+  font-size: 30px;
+  color: black;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#register-here {
+	text-align: center;
+	padding: 20px 20px;
+}
+
+#login-submit #registration-submit {
+    border-radius: 40px;
+}
+
+#login-submit-button #registration-submit-button{
+	padding: 10px 10px;
+}
+
+#registration-submit {
+    border-radius: 40px;
+}
+
+#registration-submit-button{
+	padding: 10px 10px;
+}
+
+a:link  {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: green;
+  background-color: transparent;
+}
+
+a:active {
+  color: green;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#login-alert {
+	text-align: center;
+}
+
+.registration-wrap {
+  width: 500px;
+  height: 600px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 75px 55px 55px 55px;
+/*   margin-top: 75px; */
+
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.reg-nav {
+	height: 66px;
+}
+
+.reg-icon {
+  content: url("logo.png");
+  height: 50px;
+  width: 50px;
+}

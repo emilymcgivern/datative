@@ -1,0 +1,7 @@
+id,first_name,last_name,gender,age,grade,university,module_code,average,admission_date,dob,favourite_module,top_class,exam_date,result,preference,top_class
+1,None,Venton,Male,20,76,DCU,UA,78.2,2018-03-23,11/11/1995,CA400,CA4007,2019/10/01,0,0
+2,Shayna,None,Female,23,63,DCU,UA,72,2018-03-23,11/11/1995,CA400,CA4007,2019/07/16,95.7,1
+3,Virgie,Asple,None,19,1,UCD,FI,68.2,2018-03-23,11/11/1995,None,None,2019/11/17,86.2,3
+4,Kate,Ryan,Female,23,75,DCU,UA,73.4,2018-03-23,11/11/1995,CA4007,CA4003,1900/01/01,44.3,2
+5,Shane,Dunne,Female,33,63,DCU,UA,77.8,2018-03-23,11/11/1995,CA4003,CA400,2019/07/16,32.9,0
+6,John,Dorie,Male,19,1,DCU,FI,64.2,2018-03-23,11/11/1995,CA400,CA4012,2019/11/17,19.7,5

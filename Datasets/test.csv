@@ -1,0 +1,11 @@
+id,product,product_code,quantity_ordered,price_each,order_date,order_status
+1,Watch,50436-7376,2,513.7,21/01/2020,In Process
+2,iMac,0603-5165,2,1861.8,28/01/2020,Shipped
+3,iMac,64117-959,3,912.7,09/01/2020,Cancelled
+4,iMac,76119-1170,2,1692.9,20/01/2020,Shipped
+5,iMac,65044-2861,3,1515.1,14/01/2020,Cancelled
+6,iMac,33261-918,2,1211.3,28/01/2020,Cancelled
+7,iMac,49884-762,2,1184.3,15/01/2020,Shipped
+8,iPhone,51191-3015,3,1561.3,12/01/2020,In Process
+9,Watch,63323-285,1,638.4,27/01/2020,In Process
+10,iMac,14290-283,4,1610.2,27/01/2020,Shipped

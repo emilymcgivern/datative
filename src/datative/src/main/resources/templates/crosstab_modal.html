@@ -1,0 +1,123 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div id="crosstab_modal">
+	<div class="modal-header">
+    	<h5 class="modal-title w-100 text-center">Add Crosstab</h5>
+        <button type="button" class="close" data-dismiss="modal" data-target="#settingsModal" onclick="resetCrosstabDivs()">&times;</button>
+	</div>
+	
+
+	<div class="modal-body">
+		<!-- Form for choosing options for KPI tile  -->
+		<form role="form" id="crosstabForm" name="modalForm" method="post" action="/crosstab">
+		
+		
+		   <div class="form-group">
+				<!-- Choose title of tile to be added to dashboard -->
+				<div id="choose-crosstab-title">
+					<div id="crosstabTitleHeader">
+						<h6>Enter Crosstab Title</h6>
+					</div>
+					<p class="text-secondary"><small>Enter a title which describes the crosstab content (optional)</small></p>
+					<div class="input-group mb-3">
+	  					<div class="input-group-prepend">
+	    					<span class="input-group-text" id="crosstab-title">Title</span>
+	  					</div>
+	  					<input type="text" class="form-control" value="" name="crosstabTitle" id="crosstabTitle" placeholder="Enter title" aria-label="Target" maxlength="19">
+					</div>
+				</div>
+			</div>
+		
+			<div class="form-group">
+				<div id="crosstab-op">
+					<div id="columnHeader">
+						<h6>Choose Operation</h6>
+					</div>
+					<p class="text-secondary"><small>Choose operation to be displayed in the crosstab</small></p>
+					<div class="input-group mb-3">
+	  					<div class="input-group-prepend">
+	   	 					<label class="input-group-text" for="crosstabCol">Type</label>
+	  					</div>
+	 					<select class="form-control select-checkbox" id="crosstabOpName" name="opName" required>
+	  						<th:block th:each="column : ${columnNames}">
+	  							<option value="">Choose...</option>
+	    						<option value="count">Count</option>
+		    					<option value="sum">Sum</option>
+	  						</th:block>
+						</select>
+					</div>
+				</div>
+			 </div>
+		
+			<div class="form-group">
+				<div id="choose-column-crosstab" style="display:none">
+					<div id="columnHeader">
+						<h6>Choose Column</h6>
+					</div>
+					<p class="text-secondary"><small>Choose a Column</small></p>
+					<div class="input-group mb-3">
+	  					<div class="input-group-prepend">
+	   	 					<label class="input-group-text" for="crosstabCol">Type</label>
+	  					</div>
+	 					<select class="form-control select-checkbox" id="crosstabColumnName" name="columnName" required>
+	  						<th:block th:each="column : ${columnNames}">
+	  							<option value="">Choose...</option>
+	    						<option th:each="c: ${column}" th:value="${c.key}" th:text="${c.key}" />
+	  						</th:block>
+						</select>
+					</div>
+				</div>
+			 </div>
+		 
+			 <div class="form-group">
+				<div id="choose-row-crosstab" style="display:none">
+					<div id="rowHeader">
+						<h6>Choose Row</h6>
+					</div>
+					<p class="text-secondary"><small>Choose a Row</small></p>
+					<div class="input-group mb-3">
+	  					<div class="input-group-prepend">
+	   	 					<label class="input-group-text" for="crosstabRow">Type</label>
+	  					</div>
+	 					<select class="form-control select-checkbox" id="crosstabRowName" name="rowName" required>
+	  						<th:block th:each="column : ${columnNames}">
+	  							<option value="">Choose...</option>
+	    						<option th:each="c: ${column}" th:value="${c.key}" th:text="${c.key}" />
+	  						</th:block>
+						</select>
+					</div>
+				</div>
+			 </div>
+		 
+ 		 <div class="form-group">
+				<div id="choose-agg-crosstab" style="display:none">
+					<div id="aggHeader">
+						<h6>Choose Aggregate</h6>
+					</div>
+					<p class="text-secondary"><small>Choose column which will act as an Aggregate</small></p>
+					<div class="input-group mb-3">
+	  					<div class="input-group-prepend">
+	   	 					<label class="input-group-text" for="crosstabAgg">Type</label>
+	  					</div>
+	 					<select class="form-control select-checkbox" id="crosstabAggName" name="aggregateName" required>
+	  						<th:block th:each="column : ${columnNames}">
+	  							<option value="">Choose...</option>
+	    						<option th:each="c: ${column}" th:if="${c.value == 'IntegerType' or c.value == 'DoubleType'}" th:value="${c.key}" th:text="${c.key}" />
+	  						</th:block>
+						</select>
+					</div>
+				</div>
+			 </div>
+		 
+			
+			<div class="button-box">
+				<input class="btn btn-primary" type="submit" value="Submit">
+  				<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="resetCrosstabDivs()">Cancel</button>
+			</div>
+		 </form>
+		
+	 </div>
+	
+ 	<div class="modal-footer"></div> 
+ 	
+</div>

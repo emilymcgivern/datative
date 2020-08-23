@@ -1,0 +1,143 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div id="kpi_modal">
+	<div class="modal-header">
+    	<h5 class="modal-title w-100 text-center">Add KPI Tile</h5>
+        <button type="button" class="close" data-dismiss="modal" data-target="#settingsModal" onclick="resetDivs()">&times;</button>
+	</div>
+	
+
+	<div class="modal-body">
+		
+		<!-- Form for choosing options for KPI tile  -->
+		<form role="form" id="kpiForm" name="modalForm" method="post" action="/kpi">
+		
+			<!-- Standard Modal Sections -->
+			<div class="form-group">
+			<div id="tileHeader">
+				<h6>Choose Tile Type</h6>
+			</div>
+			<p class="text-secondary"><small>Choose type of KPI Tile to add</small></p>
+				<!-- Drop-down menu for choosing what type of kpi tile to add -->
+				<div class="input-group mb-3">
+	  				<div class="input-group-prepend">
+	   	 				<label class="input-group-text" for="kpiType">Type</label>
+	  				</div>
+	 				<select class="custom-select" id="kpiType" name="kpiType" required>
+	    				<option value="">Choose...</option>
+	    				<option value="num">Numeric Tile</option>
+	    				<option value="trend">Trend Tile</option>
+	    				<option value="target">Target Tile</option>
+	 				</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<!-- Choose title of tile to be added to dashboard -->
+				<div id="choose-name" style="display:none">
+					<div id="titleHeader">
+						<h6>Enter Tile Title</h6>
+					</div>
+					<p class="text-secondary"><small>Enter a title for your KPI Tile (optional)</small></p>
+					<div class="input-group mb-3">
+	  					<div class="input-group-prepend">
+	    					<span class="input-group-text" id="title">Title</span>
+	  					</div>
+	  					<input type="text" class="form-control" value="" name="kpiTitle" id="kpiTitle" placeholder="Insert title of tile" aria-label="Target" maxlength="19">
+					</div>
+				</div>
+			</div>
+			
+			<!-- Total Tile  -->
+			
+			<div class="form-group">
+				<!-- Choose what type of operation to perform on the data column  -->
+				<div id="kpi-op" style="display:none">
+					<div id="operationHeader">
+						<h6>Choose Operation</h6>
+					</div>
+					<p class="text-secondary"><small>Choose the operation to be performed on the chosen column</small></p>
+					<div class="input-group mb-3">
+		  				<div class="input-group-prepend">
+		   	 				<label class="input-group-text" for="kpiOp">Type</label>
+		  				</div>
+		 				<select class="custom-select" id="kpiOp" name="kpiOp" required>
+		    				<option value="">Choose...</option>
+		    				<option value="total">Total</option>
+		    				<option value="average">Average</option>
+		    				<option value="med">Median</option>
+		 				</select>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<!-- List for choosing column value to display for KPI total tile -->
+				<div id="choose-column" style="display:none">
+					<div id="columnHeader">
+						<h6>Choose Column</h6>
+					</div>
+					<p class="text-secondary"><small>Choose column to be added to the KPI Tile</small></p>
+					<div th:each="column : ${columnNames}">
+						<div th:each="c: ${column}" th:if="${c.value == 'IntegerType' or c.value == 'DoubleType'}">
+							<ul style="list-style-type:none;">
+								<li> 
+									<input type="radio" name="columnName" th:value="${c.key}" required>
+									<label th:text="${c.key}"></label> 
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div> 
+			
+			
+			<div class="form-group">
+				<div id="choose-target" style="display:none">
+					<div id="targetHeader">
+						<h6>Enter Target Amount</h6>
+					</div>
+					<p class="text-secondary"><small>Enter target amount for tile result to be compared against (optional)</small></p>
+					<div class="input-group mb-3">
+	  					<div class="input-group-prepend">
+	    					<span class="input-group-text" id="target">Target</span>
+	  					</div>
+	  					<input type="text" class="form-control" value="" name="kpiTarget" id="kpiTarget" placeholder="Value" aria-label="Target" maxlength="10">
+					</div>
+				</div>
+			</div>
+			
+			<!-- Trend Tile -->
+			
+			<div class="form-group">
+				<!-- List for choosing date time column value to display for trend tile -->
+				<div id="choose-column-trend-date" style="display:none">
+					<div id="dateHeader">
+						<h6>Choose Date Column</h6>
+					</div>
+					<p class="text-secondary"><small>Choose date column to display your data over time</small></p>
+					<div th:each="column : ${columnNames}">
+						<div th:each="c: ${column}" th:if="${c.value == 'DateType'}">
+							<ul style="list-style-type:none;">
+								<li> 
+									<input type="radio" name="columnNameTrendDate" th:value="${c.key}" required>
+									<label th:text="${c.key}"></label> 
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="button-box">
+				<input class="btn btn-primary" type="submit" value="Submit">
+  				<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="resetDivs()">Cancel</button>
+			</div>
+		</form>
+		
+	</div>
+	
+ 	<div class="modal-footer">
+		
+	</div> 
+</div>

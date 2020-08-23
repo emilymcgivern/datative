@@ -1,0 +1,187 @@
+.container {
+	width: 100%;
+  	margin: 0 auto;
+  	padding-top: 50px;
+  	text-align: center;  	
+}
+
+#home-cards {
+	padding-top: 75px;
+}
+
+#home-cards {
+	padding-top: 75px;
+}
+
+#upload-card {
+	width: 700px;
+	display: inline-block;
+	border-color: #32a744;
+	height: 500px;
+}
+
+#uploadSumbit {
+	border-radius: 40px;
+	width: 100px;
+}
+
+#table-name-input {
+	width: 400px;
+}
+
+#upload-file {
+	padding-left:120px;
+	padding-top: 20px;
+	outline:none;
+}
+
+#table-name {
+	padding-left:80px;
+}
+
+#profile-tabs {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#profile-content {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.list-group-item {
+	border: none;
+	padding: 0px;
+}
+
+hr {
+    margin: 2px 0;
+    border: 0.2px solid #d2d0d3;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.p-2  {
+	flex: 0 0 500px;
+}
+
+.ml-auto  {
+	padding-right: 10px;
+	padding-top: 3px;
+}
+
+#dataset-submit {
+    border-radius: 40px;
+}
+
+.download-button {
+    border-radius: 40px;
+}
+
+.list-headings {
+	font-weight: bold;
+}
+
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+#welcome {
+  width: 800px;
+}
+
+#welcome h3 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #737b74;
+}
+
+.index-button {
+    border-radius: 40px;
+}
+
+.header-icon {
+ 	padding-left: 5px; 
+ 	padding-right: 20px; 	
+}
+
+.icon-image {
+	width: 50px;
+ 	height: 50px;	
+}
+
+.navbar-brand {
+	margin-left: 10px;
+}
+
+.navbar {
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,.2); /* Grey shadow under navbar  */
+    margin-bottom: 10px;
+    margin-right:0;
+}
+
+.index-card {
+	height: 300px;
+}
+
+.upload-icon {
+  content: url("upload-icon.png");
+  height: 50px;
+  width: 50px;
+}
+
+.profile-icon {
+  content: url("profile-icon.png");
+  height: 50px;
+  width: 50px;
+}
+
+.card {
+    border-color: #32a744;
+}
+
+#error-status {
+	font-size: 200px;
+	color: #448a23;
+}
+
+#error-message {
+	font-size: 50px;
+}
+
+.error-icon {
+  content: url("error.png");
+  height: 100px;
+  width: 100px;
+}
+
+.main-nav a:hover {
+	background-color: #cbe3a1;
+	border-radius: 40px;
+}
+
+.profile-tab a:hover {
+	background-color: #cbe3a1;
+}
+
+.profile-tab a {
+	color: black;
+}
+
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(loader.gif) 50% 50% no-repeat rgb(249,249,249);
+}
+
+
+
+

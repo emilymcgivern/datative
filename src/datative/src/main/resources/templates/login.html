@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/login.css"/>
+		<link rel="stylesheet" href="css/main.css"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+		<title>Login</title>
+	</head>
+
+	<body>
+		
+		<nav class="navbar navbar-expand-lg navbar-light bg-light reg-nav">
+			<i class="reg-icon"></i>
+  			<a class="navbar-brand" id="reg-brand" href="#">Datative</a>
+		</nav>
+ 
+		<div class="container">
+			<div class="login-container">
+				<div class="login-wrap">
+					<form th:action="@{/login}" method="post">
+						<span class="login-title">Login</span>
+						<div th:if="${param.error}">
+							<div class="alert alert-danger" id="login-alert">Invalid username or password</div>
+						</div>
+						<div th:if="${param.logout}">
+							<div class="alert alert-info" id="login-alert">You have been logged out</div>
+						</div>
+						<div class="form-group">
+							<input type="text" id="username" name="username" class="form-control" autofocus="autofocus" placeholder="Email Address" />
+						</div>
+						<div class="form-group">
+							<input type="password" id="password" name="password" class="form-control" placeholder="Password" />
+						</div>
+						<div class="form-group" id="login-submit-button">
+							<input type="submit" name="login-submit" id="login-submit" class="form-control btn btn-success" value="Login" />
+						</div>
+						<hr>
+						<div class="form-group" id="register-here">
+							<span>New user?<a href="/" th:href="@{/registration}"> Sign Up</a></span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</body>	
+</html>

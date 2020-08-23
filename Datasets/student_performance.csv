@@ -1,0 +1,11 @@
+id,gender,age,nationality,favourite_class,least_favourite_class,absences,internet_access,grade
+1,Female,18,,CA4009,CA4012,1,no,87
+2,,19,Irish,CA4009,CA4004,4,no,60
+3,Male,,Spanish,CA4010,CA4004,2,no,59
+4,Male,25,Irish,CA4010,CA4004,1,no,85
+5,Female,,Irish,CA4003,CA4007,3,no,
+6,Female,18,Irish,CA4009,CA4004,1,yes,67
+7,,20,French,CA4010,CA4004,4,yes,
+8,Female,21,,CA4003,CA4012,2,no,40
+9,,20,Irish,CA4010,CA4007,1,yes,
+10,Female,21,French,CA4003,CA4007,4,yes,32
